@@ -1,0 +1,5 @@
+./files/first.txt
+./files/second.txt
+./files/third.txt
+./files/causeError.txt
+./files/fourth.txt

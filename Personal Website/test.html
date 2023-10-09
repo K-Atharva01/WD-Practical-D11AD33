@@ -5,27 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teststyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center py-3">
+    <nav style="display:flex; justify-content: center; flex-wrap:nowrap;">
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-        </ul>
+            <li><div class="dark-mode-toggle">
+                <label for="darkModeToggle">Dark Mode</label>
+                <input type="checkbox" id="darkModeToggle">
+            </div></li>
+        </ul>       
+        <div id="currentDateNav" style="text-align: right;"></div>
     </nav>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center py-3">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><div class="dark-mode-toggle">
+                <label for="darkModeToggle">Dark Mode</label>
+                <input type="checkbox" id="darkModeToggle">
+            </div></li>
+        </ul>       
+    </nav> -->
     <div class="container-fluid">
         <div class="about-section" id="aboutme">
             <center>
                 <h1 id="aboutme">About Me</h1>
             </center>
             <div class="about-container">
-                <div class="about-image">
-                    <img src="assets\PXL_20230311_041658203.jpg" alt="Your Photo">
+                <div class="slider-container">
+                    <div class="mySlides fade"><img src="assets/MyImage1.jpg" alt="Your Photo" id="Photo1"></div>
+                    <div class="mySlides fade"><img src="assets/MyImage2.jpg" alt="Your Photo" id="Photo2"></div>
+                    <div class="mySlides fade"><img src="assets/random2.jpeg" alt="Your Photo" id="Photo3"></div>                 
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
                 <div class="about-text">
                     <h1 class="blue-text">Hello, I'm Atharva Khanvilkar</h1>
@@ -33,6 +58,7 @@
                 </div>
             </div>
         </div>
+        
         
     
         <div class="skills-section" id="skills">
@@ -50,19 +76,19 @@
                         <p>Experienced in Java programming language</p>
                     </div>
                     <div class="skill-item">
-                        <img src="assets/Python-logo-notext.svg.png" alt="Skills">
+                        <img src="assets/python_logo.png" alt="Skills">
                         <h2>Python</h2>
                         <p>Skilled in Python programming language</p>
                     </div>
                 </div>
                 <div class="skills-container">
                     <div class="skill-item">
-                        <img src="assets/cyber-security-logo-template-vector-20409767.jpg" alt="Skills">
+                        <img src="assets/cyber.png" alt="Skills">
                         <h2>Cyber Security Basics</h2>
                         <p>Familiar with the fundamentals of cyber security</p>
                     </div>
                     <div class="skill-item">
-                        <img src="assets/flutter_logo.jpg" alt="Skills">
+                        <img src="assets/flutter_logo.png" alt="Skills">
                         <h2>Flutter Basics</h2>
                         <p>Basic understanding of Flutter app development</p>
                     </div>
@@ -90,7 +116,7 @@
                         <p>Scored 86.33%ile in JEE and 95.35%ile in MHT-CET</p>
                     </div>
                     <div class="education-item">
-                        <img src="assets/ddm.jpg" alt="College">
+                        <img src="assets/ddm-removebg-preview.png" alt="College">
                         <h2>DDM Jr. College</h2>
                         <p>Higher Secondary Education (HSC)</p>
                         <p>July 2019 - August 2021</p>
@@ -98,7 +124,7 @@
                         <p>Completed 12th grade with 86.67%</p>
                     </div>
                     <div class="education-item">
-                        <img src="assets/nhss.jpeg" alt="School">
+                        <img src="assets/nhss-removebg-preview.png" alt="School">
                         <h2>New Horizon Scholars School</h2>
                         <p>Secondary Education (CBSE)</p>
                         <p>April 2016 - March 2019</p>
@@ -114,10 +140,10 @@
                 <h1 class="blue-text">Projects and Achievements</h1>
                 <div class="projects-container">
                     <div class="project-item">
-                        <a href="https://github.com/Riteshbhalerao11/Enabled"><img src="assets/iitbeyantra.png" alt="project"></a>
+                        <a href="https://github.com/Riteshbhalerao11/Enabled"><img src="assets/iitbeyantra-removebg-preview.png" alt="project"></a>
                         <h2>Enabled - eYIC</h2>
                         <p>eYantra Innovation Challenge Regional Finalist</p>
-                        <p>Project: Enabled-community platform for PWDs</p>
+                   inde     <p>Project: Enabled-community platform for PWDs</p>
                     </div>
                     <div class="project-item">
                         <a href="https://github.com/K-Atharva01/Hackathon-Retrospect"><img src="assets/webathon.png" alt="project"></a>
@@ -133,7 +159,7 @@
                 </div>
             </center>
         </div>    
-    
+        <i id="goTopBtn" class="fa-solid fa-arrow-up"></i>    
         <div class="contact-section" id="contact">
             <center>
                 <h1 class="blue-text">Contact</h1>
@@ -146,6 +172,207 @@
             </center>
         </div>
     </div>
+
+    <div class="form-section">
+        <h1 id="contact-head">Contact Form</h1>
+        <form id="contactForm">
+            <div class="error-message" id="name-error"></div>
+            <p>Name: <input type="text" id="name" name="name"></p>
+            <div class="error-message" id="email-error"></div>
+            <p>Email: <input type="text" id="email" name="email"></p>
+            <div class="error-message" id="phone-error"></div>
+            <p>Phone: <input type="text" id="phone" name="phone"></p>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+
+    <script>
+
+        class DarkModeToggle {
+            constructor() {
+                this.darkModeToggle = document.getElementById("darkModeToggle");
+                this.body = document.body;
+
+                this.darkModeToggle.addEventListener("change", this.toggleDarkMode.bind(this));
+            }
+
+            toggleDarkMode() {
+                if (this.darkModeToggle.checked) {
+                    this.body.classList.add("dark-mode");
+                } else {
+                    this.body.classList.remove("dark-mode");
+                }
+            }
+        }
+
+        // Back to Top Button
+
+        class BackToTopButton {
+            constructor() {
+                this.goTopBtn = document.getElementById("goTopBtn");
+
+                window.addEventListener("scroll", this.handleScroll.bind(this));
+                this.goTopBtn.addEventListener("click", this.scrollToTop.bind(this));
+            }
+
+            handleScroll() {
+                if (window.scrollY > 1) {
+                    this.goTopBtn.style.display = "block";
+                } else {
+                    this.goTopBtn.style.display = "none";
+                }
+            }
+
+            scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Date
+
+        class CurrentDateDisplay {
+            constructor() {
+                this.currentDateNavElement = document.getElementById("currentDateNav");
+                this.updateCurrentDate();
+            }
+
+            updateCurrentDate() {
+                const currentDate = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = currentDate.toLocaleDateString('en-US', options);
+                this.currentDateNavElement.textContent = formattedDate;
+            }
+        }
+
+        // Contact Form Validation
+
+        class ContactFormHandler {
+            constructor() {
+                this.contactForm = document.getElementById("contactForm");
+                this.nameInput = document.getElementById("name");
+                this.emailInput = document.getElementById("email");
+                this.phoneInput = document.getElementById("phone");
+
+                this.nameError = document.getElementById("name-error");
+                this.emailError = document.getElementById("email-error");
+                this.phoneError = document.getElementById("phone-error");
+
+                this.contactForm.addEventListener("submit", this.handleFormSubmit.bind(this));
+            }
+
+            handleFormSubmit(event) {
+                event.preventDefault();
+
+                let isValid = true;
+                this.clearErrors();
+
+                if (this.nameInput.value.trim() === "") {
+                    this.displayError(this.nameError, "Name cannot be empty.");
+                    isValid = false;
+                }
+
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(this.emailInput.value)) {
+                    this.displayError(this.emailError, "Please enter a valid email address.");
+                    isValid = false;
+                }
+
+                const phonePattern = /^\d+$/;
+                if (!phonePattern.test(this.phoneInput.value)) {
+                    this.displayError(this.phoneError, "Phone number must contain only numeric characters.");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Submit the form if there are no errors
+                    this.contactForm.submit();
+                }
+            }
+
+            displayError(errorElement, message) {
+                errorElement.textContent = message;
+            }
+
+            clearErrors() {
+                this.nameError.textContent = "";
+                this.emailError.textContent = "";
+                this.phoneError.textContent = "";
+            }
+        }
+
+        // class Slideshow {
+        //     constructor() {
+        //         this.slideIndex = 1;
+        //         this.showSlides(this.slideIndex);
+        //     }
+
+        //     plusSlides(n) {
+        //         this.showSlides(this.slideIndex += n);
+        //     }
+
+        //     currentSlide(n) {
+        //         this.showSlides((this.slideIndex = n));
+        //     }
+
+        //     showSlides(n) {
+        //         let i;
+        //         let slides = document.getElementsByClassName("mySlides");
+        //         if (n > slides.length) {
+        //             this.slideIndex = 1;
+        //         }
+        //         if (n < 1) {
+        //             this.slideIndex = slides.length;
+        //         }
+        //         for (i = 0; i < slides.length; i++) {
+        //             slides[i].style.display = "none";
+        //         }
+        //         slides[this.slideIndex - 1].style.display = "block";
+        //     }
+        // }
+
+        //Slideshow Open
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+        // Initialize JavaScript features
+        new DarkModeToggle();
+        new BackToTopButton();
+        new CurrentDateDisplay();
+        new ContactFormHandler();
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const slideshow = new Slideshow();
+        });
+
+
+    </script>
+
 </body>
 
 <footer>
