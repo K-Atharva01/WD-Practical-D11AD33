@@ -1,0 +1,34 @@
+{
+  "appointments": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "time": "2023-10-15T09:00:00",
+      "reason": "Checkup"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "time": "2023-10-16T14:30:00",
+      "reason": "Dental cleaning"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "time": "2023-10-17T11:15:00",
+      "reason": "Consultation"
+    },
+    {
+      "id": 4,
+      "name": "Bob Wilson",
+      "time": "2023-10-18T16:00:00",
+      "reason": "Follow-up"
+    },
+    {
+      "name": "Atharva Khanvilkar",
+      "time": "11:37",
+      "reason": "Testing ",
+      "id": 4
+    }
+  ]
+}
