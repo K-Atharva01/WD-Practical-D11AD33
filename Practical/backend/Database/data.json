@@ -1,18 +1,20 @@
 {
-    "updates": [{
-        "name": "Amit Singh",
+    "updates": [
+        {
+            "name": "Amit Singh",
             "subject": "Wev Dev",
-            "info":"Testing NewUpdates",
-            "date":"14-10-23",
-            "time":"10:00 AM"
-
-    }],
-
-    "history": [{
-        "name": "Amit Singh",
+            "info": "Testing NewUpdates",
+            "date": "14-10-23",
+            "time": "10:00 AM"
+        }
+    ],
+    "history": [
+        {
+            "name": "Amit Singh",
             "subject": "Java",
-            "info":"Testing History",
-            "date":"26-09-22",
-            "time":"10:00 AM"
-    }]
+            "info": "Testing History",
+            "date": "26-09-22",
+            "time": "10:00 AM"
+        }
+    ]
 }

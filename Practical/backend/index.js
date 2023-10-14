@@ -13,6 +13,22 @@ app.get("/getUpdates",(req,res) =>{
     res.json(data);
 })
 
+app.post("/postUpdate", (req, res) => {
+    const data = fs.readFileSync('./Database/data.json');
+    const jsonData = JSON.parse(data);
+    const requestData = req.body;
+    requestData.id = jsonData.updates.length +1;
+    console.log(requestData)
+    
+    jsonData.appointments.push(requestData);
+    const jsonString = JSON.stringify(jsonData);
+    fs.writeFileSync('./Database/data.json', jsonString, 'utf-8', (err) => {
+        if (err) throw err;
+        console.log('Data added to file');
+    });
+    res.sendStatus(200);
+})
+
 app.listen(PORT,()=>{
     console.log("Listening on port 5000")
 })

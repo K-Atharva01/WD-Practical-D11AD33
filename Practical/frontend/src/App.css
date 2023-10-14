@@ -1,3 +1,11 @@
+.maincontent{
+  /* background-color: red; */
+  margin: 10px;
+  padding: 10px 30px;
+}
+
+/* Navbar */
+
 .header{
   padding: 15px 50px;
   display: flex;
@@ -42,11 +50,7 @@ li .active {
   color: white  ;
 }
 
-.maincontent{
-  /* background-color: red; */
-  margin: 10px;
-  padding: 10px 30px;
-}
+/* NewUpdates and History */
 
 .listContainer{
   margin-top:30px;
@@ -70,4 +74,26 @@ li .active {
   justify-content: center; /* Horizontal centering */
   align-items: center;
   padding: 2px 20px;
+}
+
+/* Teacher */
+
+.teacherpage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-customized{
+  justify-content: center;
+  align-items: center;
+  max-width: 100vh;
+  /* border: 1px solid;
+  border-radius: 20px;
+  padding: 50px;
+  padding-top: 10px; */
+}
+
+.teacherpage h1{
+  text-align: center;
 }
