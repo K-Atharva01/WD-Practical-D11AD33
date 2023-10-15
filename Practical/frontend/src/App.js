@@ -5,7 +5,6 @@ import NewUpdates from './components/NewUpdates';
 import History from './components/History'
 import Teacher from './components/Teacher';
 import 'bootstrap/dist/css/bootstrap.css';
-// import TestTeacher from './components/TestTeacher'
 
 
 function App() {

@@ -9,7 +9,7 @@ function Navbar() {
                     <CustomLink href={"/"}>Home</CustomLink>
                     <CustomLink href={"/NewUpdates"}>New Updates</CustomLink>
                     <CustomLink href={"/History"}>History</CustomLink>
-                    <CustomLink href={"/Profile"}>Profile</CustomLink>
+                    <CustomLink href={"/Teacher"}>Teacher</CustomLink>
                 </ul>
             </nav>
         </div>    

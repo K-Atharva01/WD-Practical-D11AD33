@@ -45,10 +45,12 @@ li .active {
   color: rgb(0, 115, 255);
 }
 
-.nav li:hover{
-  background-color: rgba(93, 90, 90, 0.968);
-  color: white  ;
+.nav a:hover{
+  /* background-color: rgba(93, 90, 90, 0.968); */
+  color: rgb(0, 115, 255)  ;
+
 }
+
 
 /* NewUpdates and History */
 
@@ -84,16 +86,17 @@ li .active {
   align-items: center;
 }
 
-.card-customized{
-  justify-content: center;
-  align-items: center;
-  max-width: 100vh;
-  /* border: 1px solid;
-  border-radius: 20px;
-  padding: 50px;
-  padding-top: 10px; */
-}
-
 .teacherpage h1{
   text-align: center;
 }
+
+.teacherpage form{
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+}
+
+.teacherpage label{
+  padding: 10px;
+}
+

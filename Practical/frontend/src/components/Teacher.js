@@ -1,11 +1,7 @@
-import React, { useRef, useState } from "react";
-import { Card, Button, Form } from 'react-bootstrap';
+import React, { useState } from "react";
 
 function Teacher() {
 
-    const nameRef = useRef();
-    const subRef = useRef();
-    const infoRef = useRef();
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -14,44 +10,55 @@ function Teacher() {
         setInputs(values => ({ ...values, [name]: value }))
     }
 
+    console.log(inputs);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // alert(inputs);
         const response = await fetch("http://localhost:5000/postUpdate", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(inputs),
+            body: JSON.stringify(inputs)
         });
         console.log(response.json);
     }
     return (
         <div className="teacherpage">
-            <Card style={{ maxwidth: '200px' }} className="card-customized">
-
-                <Card.Body>
-                    <h1>Teacher Page</h1>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3" controlId="teacherName">
-                            <Form.Label>Teacher Name</Form.Label>
-                            <Form.Control type="text" ref={nameRef} placeholder="Enter Name" onChange={handleChange}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="subName">
-                            <Form.Label>Subject</Form.Label>
-                            <Form.Control type="text" ref={subRef} placeholder="Enter Subject Name" onChange={handleChange} />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="infoText">
-                            <Form.Label>Info</Form.Label>
-                            <Form.Control type="text" ref={infoRef} placeholder="Enter Update information" onChange={handleChange} />
-                        </Form.Group>
-                        <Button variant="primary" type="submit" onClick={handleSubmit}>
-                            Submit
-                        </Button>
-                    </Form>
-                </Card.Body>
-            </Card>
+            <form onSubmit={handleSubmit}>
+                <label>Enter Teacher Name :
+                    <br />
+                    <input
+                        type="text"
+                        name="name"
+                        value={inputs.name || ""}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>Enter Subject Name :
+                    <br />
+                    <input
+                        type="text"
+                        name="subject"
+                        value={inputs.subject || ""}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>Enter Update Info :
+                    <br />
+                    <input
+                        type="text"
+                        name="info"
+                        value={inputs.info || ""}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <input type="submit" />
+            </form>
         </div>
     )
 }
