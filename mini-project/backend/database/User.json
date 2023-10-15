@@ -1,20 +1,18 @@
 {
-    "users": [
-        {
-            "id": "1",
-            "username": "Atharva",
-            "password": "test",
-            "email": "atharva@example.com",
-            "name": "Atharva Khanvilkar",
-            "age": 19
-        },
-        {
-            "id": "2",
-            "username": "user1",
-            "password": "password1",
-            "email": "user1@example.com",
-            "name": "John Doe",
-            "age": 25
-        }
-    ]
+  "users": [
+    {
+      "username": "test",
+      "password": "$2b$10$7ndda/Cek9vC2pzPTVZCOu.VOi48PdMlKSxWumQZ5gR6161GY3ZqK",
+      "name": "Atharva Khanvilkar",
+      "age": "19",
+      "email": "test@gmail.com"
+    },
+    {
+      "username": "katharva",
+      "password": "$2b$10$eyvE/n/amOpeYT9OjZOPQOFyute98cCWeRzCTn7mDtqIyfG/OHlMq",
+      "name": "Atharva Khanvilkar",
+      "age": "19",
+      "email": "test@gmail.com"
+    }
+  ]
 }

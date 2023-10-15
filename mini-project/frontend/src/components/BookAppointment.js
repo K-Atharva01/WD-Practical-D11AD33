@@ -6,7 +6,7 @@ import { useState } from 'react';
 function BookAppointment() {
     return (
         <div className="bookappointment">
-            <h1>Appointment Booking</h1>
+            {/* <h1>Appointment Booking</h1> */}
             <div>
                 <MyForm />
             </div>
@@ -37,48 +37,47 @@ function MyForm() {
         });
         console.log(response.json);
         setInputs({ name: '', time: '', reason: '' });
-        alert("Appointment added");     
+        alert("Appointment added");
     }
 
     return (
         <div className="bookingPage">
             <form onSubmit={handleSubmit} className="bookingForm">
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                }}>
-                    <label>Enter your name :
-                        <input
-                            type="text"
-                            name="name"
-                            value={inputs.name || ""}
-                            onChange={handleChange} required
-                        />
-                    </label>
-
-                    <label>Enter Appointment time :
-                        <input
-                            type="text"
-                            name="time"
-                            value={inputs.time || ""}
-                            onChange={handleChange} required
-                        />
-                    </label>
-
-                    <label>Enter your reason :
-                        <input
-                            type="text"
-                            name="reason"
-                            value={inputs.reason || ""} 
-                            onChange={handleChange} required
-                        />
-                    </label>
-
-                    <input type="submit" style={{
-                        maxWidth: "fit-content",
-                        alignSelf: "center"
-                    }} />
+                <h2>Book an Appointment</h2>
+                <div className="form-group">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={inputs.name}
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="time">Time:</label>
+                    <input
+                        type="text"
+                        id="time"
+                        name="time"
+                        value={inputs.time}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="reason">Reason:</label>
+                    <input
+                        type="text"
+                        id="reason"
+                        name="reason"
+                        value={inputs.reason}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

@@ -1,7 +1,7 @@
 //Login Page
 
 import { React, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from '../contexts/AuthContext';
 
 function LoginPage() {
@@ -23,17 +23,16 @@ function LoginPage() {
                 body: JSON.stringify({ username, password }),
             });
             const data = await response.json();
-            JSON.stringify(data)
-            console.log(username,password)
 
             if (data.token) {
                 setToken(data.token);
-                
+
                 console.log(data.token)
                 navigate("/Home")
             }
             else {
-                alert("cannot login")
+
+                alert(data.message)
             }
         } catch (error) {
             console.error(error);
@@ -43,15 +42,17 @@ function LoginPage() {
     return (
         <main className="loginPage">
             <form className="loginForm" onSubmit={handleLogin} >
-                <label>Username :
+                <h2>Login</h2>
+                <label>Username:
                     <input
                         type="text"
                         name="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                        required
                     />
                 </label>
-                <label>Password :
+                <label>Password:
                     <input
                         type="password"
                         name="password"
@@ -60,11 +61,12 @@ function LoginPage() {
                         required
                     />
                 </label>
-                <input type="submit" style={{
+                <button type="submit" style={{
                     maxWidth: "fit-content",
                     alignSelf: "center"
-                }} />
-                <p>Sign up ?</p>
+                }}>Submit</button>
+                <br /><br />
+                <Link to="/SignUp">Sign up ?</Link>
             </form>
         </main>
     )

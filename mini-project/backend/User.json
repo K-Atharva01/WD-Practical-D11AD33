@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "username": "test",
+      "password": "$2b$10$yGXqGC8h6ggNEoWHccAfUOeqG8373aF3RoLDjfO0mBonkvxVZ6dTq",
+      "name": "Atharva Khanvilkar",
+      "age": "19",
+      "email": "test@gmail.com"
+    }
+  ]
+}

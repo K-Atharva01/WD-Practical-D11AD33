@@ -92,44 +92,135 @@ li .active {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 65vh;
+  background-color: #ffffff;
 }
 
-.bookingPage h1 {
-  text-align: center;
-}
-
-.bookingPage form {
-  border: 1px solid;
-  border-radius: 20px;
+.bookingForm {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  padding-right: 40px;
   text-align: center;
+  /* max-width: 400px; */
+  width: 50%;
+  margin-top:50px;
 }
 
-.bookingPage label {
+.bookingForm h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-/* Login Page */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Login & SignUp Page */
 
 .loginPage {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 65vh;
+  background-color: #ffffff;
+}
+
+.signUpPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  background-color: #ffffff;
 }
 
 .loginForm {
-  border: 1px solid;
-  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  padding-right: 40px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  width: 50%;
+  margin-top: 50px;
+}
 
+.loginForm h2{
+  color: #007bff;
 }
 
 .loginForm label {
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 5px;
+  margin: 20px;
 }
+
+.loginForm .form-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.loginForm input[type="text"],
+.loginForm input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.loginForm button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loginForm button:hover {
+  background-color: #0056b3;
+}
+
 
 /* Profile */
 
@@ -149,5 +240,7 @@ li .active {
 }
 
 .profileData h1 {
-  color: rgb(0, 115, 255);;
+  color: rgb(0, 115, 255);
+  ;
 }
+

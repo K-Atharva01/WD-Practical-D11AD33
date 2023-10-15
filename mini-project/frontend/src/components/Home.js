@@ -7,7 +7,7 @@ function Home() {
         <div className="home">
             <h1>Home Page</h1>
             <div>
-                <h2>Athavra Khanvilkar</h2>
+                <h2>Atharva Khanvilkar</h2>
             </div>
         </div>
     )

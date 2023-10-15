@@ -5,6 +5,7 @@ const app = express();
 const fs = require('fs');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
@@ -20,17 +21,24 @@ const userData = require('./database/User.json')
 
 //Register User
 app.post('/register', (req, res) => {
-    const { username, password } = req.body;
+    const { username, password, name, age, email } = req.body;
 
-    if (userData.users.find(user => user.username === username)) {
+    if (userData.users.find((user) => user.username === username)) {
         return res.status(400).json({ message: 'Username already in use' });
     }
 
-    // Add the new user to the JSON data
-    userData.users.push({ username, password });
-    fs.writeFileSync('users.json', JSON.stringify(userData, null, 2));
+    // Hash the password
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            return res.status(500).json({ message: 'Error hashing the password' });
+        }
 
-    res.status(201).json({ message: 'User registered successfully' });
+        userData.users.push({ username, password: hash, name, age, email });
+
+        fs.writeFileSync('./database/User.json', JSON.stringify(userData, null, 2));
+
+        res.status(201).json({ message: 'User registered successfully' });
+    });
 });
 
 
@@ -38,16 +46,22 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    const user = userData.users.find(user => user.username === username && user.password === password);
+    const user = userData.users.find(user => user.username === username);
 
     if (!user) {
-        return res.status(401).json({ message: 'Authentication failed' });
+        return res.status(401).json({ message: 'User Not Found' });
     }
 
-    // Generate a JWT
-    const token = jwt.sign({ username }, secretKey);
-    console.log(token)
-    res.json({ token });
+    //Compare password hash
+    bcrypt.compare(password, user.password, (err, passwordMatch) => {
+        if (err || !passwordMatch) {
+            return res.status(401).json({ message: 'Wrong Password' });
+        }
+
+        // Generate a JWT
+        const token = jwt.sign({ username }, secretKey);
+        res.json({ token });
+    });
 });
 
 
@@ -70,7 +84,7 @@ app.get('/getUserData', (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        res.json({ username: user.username, email: user.email,name: user.name,age:user.age });
+        res.json({ username: user.username, email: user.email, name: user.name, age: user.age });
     });
 });
 
@@ -88,7 +102,6 @@ app.post("/newAppointment", (req, res) => {
     const jsonData = JSON.parse(data);
     const requestData = req.body;
     requestData.id = jsonData.appointments.length + 1;
-    console.log(requestData)
 
     jsonData.appointments.push(requestData);
     const jsonString = JSON.stringify(jsonData);
