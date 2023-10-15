@@ -1,34 +1,43 @@
+/* CSS */
+
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
 
-.header{
-  padding: 15px 50px;
+.App {
+  /* background-color: red; */
+  margin: 10px;
+  padding: 10px 30px;
+}
+
+/* Header */
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#sitename{
+#sitename {
   color: rgb(0, 115, 255);
 }
 
-.nav ul{
+.nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
   /* background-color: aqua; */
 }
 
-.nav li{
+.nav li {
   /* background-color: red; */
   /* border: 2px solid; */
   padding: 15px;
 }
 
-.nav a{
+.nav a {
   text-decoration: none;
   color: black;
   font-size: 28px;
@@ -39,41 +48,106 @@ li .active {
   color: rgb(255, 0, 0);
 }
 
-.active a{
+.active a {
   color: rgb(0, 115, 255);
 }
 
-.nav li:hover{
-  background-color: rgba(93, 90, 90, 0.968);
-  color: white  ;
+.nav a:hover {
+  /* background-color: rgba(93, 90, 90, 0.968); */
+  color: rgb(0, 115, 255);
 }
 
-.maincontent{
-  /* background-color: red; */
-  margin: 10px;
-  padding: 10px 30px;
+
+/* Schedule */
+
+.listContainer {
+  margin-top: 30px;
 }
 
-.listContainer{
-  margin-top:30px;
-}
-
-.listbox{
+.listbox {
   margin-top: 8px;
   border: 1px solid;
   display: flex;
   border-radius: 20px;
 }
 
-.leftpart{
+.leftpart {
   padding: 2px 20px;
   width: 25%;
   border-right: 1px solid;
 }
 
-.rightpart{
+.rightpart {
   display: flex;
-  justify-content: center; /* Horizontal centering */
+  justify-content: center;
+  /* Horizontal centering */
   align-items: center;
   padding: 2px 20px;
+}
+
+
+/* Book Appointment */
+
+.bookingPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookingPage h1 {
+  text-align: center;
+}
+
+.bookingPage form {
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.bookingPage label {
+  padding: 10px;
+}
+
+/* Login Page */
+
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.loginForm label {
+  padding: 20px;
+}
+
+/* Profile */
+
+.profilePage {
+  display: flex;
+  justify-content: center;
+}
+
+.profileData {
+  justify-content: center;
+  text-align: center;
+  border: 1px solid;
+  align-self: center;
+  padding: 20px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.profileData h1 {
+  color: rgb(0, 115, 255);;
 }

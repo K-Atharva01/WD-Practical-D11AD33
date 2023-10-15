@@ -1,36 +1,45 @@
-//Create an app for scheduling appointments with businesses or professionals.
+//App.js
+
+//Problem Statement : Create an app for scheduling appointments with businesses or professionals.
 
 import './App.css';
-import Header from './components/Header';
 import Home from './components/Home';
-import MyForm from'./components/BookAppointment';
 import MySchedule from './components/MySchedule';
+import LoginPage from './components/LoginPage';
+import Profile from './components/Profile'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BookAppointment from './components/BookAppointment';
+import Layout from './components/Layout';
 
 function App() {
-  let content
 
-  switch (window.location.pathname) {
-    case "/":
-      content = <Home />
-      break
-    case "/BookAppointment":
-      content = <MyForm />
-      break
-    case "/MySchedule":
-      content = <MySchedule />
-      break
-    // case "/Profile":
-    //   content = <Profile />
-    //   break
-  }
+  // const [user, setUser] = useState(null);
+  // const [token, setToken] = useState(null);
+
+  // const handleLogin = (username, token) => {
+  //   setUser(username);
+  //   setToken(token);
+  // };
+
+  // const handleLogout = () => {
+  //   setUser(null);
+  //   setToken(null);
+  // };
 
   return (
-    <div className="App">
-      <Header />
-      <main className='maincontent'>
-        {content}
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route element={<LoginPage />} path='/' ></Route>
+          <Route path='/' element={<Layout />}>
+            <Route element={<Home />} path='/Home' ></Route>
+            <Route element={<BookAppointment />} path='/BookAppointment' ></Route>
+            <Route element={<MySchedule />} path='/MySchedule' ></Route>
+            <Route element={<Profile/>} path = '/Profile'></Route>
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

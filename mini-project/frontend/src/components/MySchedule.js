@@ -1,3 +1,5 @@
+//Schedule Page
+
 import React, { useEffect, useState } from "react";
 
 function MySchedule() {
@@ -12,6 +14,7 @@ function MySchedule() {
         console.log(appointments);
     },[appointments])
 
+    //Schedule GET request
     async function fetchData(){
         const response = await fetch("http://localhost:5000/getAppointments");
         const data = await response.json(); 
@@ -25,7 +28,7 @@ function MySchedule() {
             <h1>My Schedule</h1>
             <div className="listContainer">
                 {appointments && appointments.map((el)=>{
-                    return <ListBox name={el.name} time={el.time} reason={el.reason} />
+                    return <ListBox key = {el.id} name={el.name} time={el.time} reason={el.reason} />
                 })}
             </div>
         </div>
