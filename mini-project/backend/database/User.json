@@ -13,6 +13,13 @@
       "name": "Atharva Khanvilkar",
       "age": "19",
       "email": "test@gmail.com"
+    },
+    {
+      "username": "atharva",
+      "password": "$2b$10$Z261jLxHSIU6WF2mT7NMEuui6lJAZddJzWnhCrzzo3zjhDKdAOpbG",
+      "name": "Atharva Khanvilkar",
+      "age": "19",
+      "email": "2021.atharva.khanvilkar@ves.ac.in"
     }
   ]
 }
